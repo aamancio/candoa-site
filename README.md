@@ -17,6 +17,12 @@ from:
 public/downloads/latest.json
 ```
 
+Sparkle in-app updates use:
+
+```text
+public/downloads/appcast.xml
+```
+
 ## Tech Stack
 
 - Next.js App Router
@@ -56,7 +62,8 @@ serves the updated installer.
 
 The stable URL stays `Candoa.dmg`, but the page uses `latest.json` to ask the
 browser to save the file with the app version, for example
-`Candoa 0.1.0.dmg`. The same manifest is used by the app's update checker.
+`Candoa 0.1.0.dmg`. Sparkle uses `appcast.xml` for in-app update detection,
+download, verification, and installation.
 
 ## Deployment
 
