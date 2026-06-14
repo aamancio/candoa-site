@@ -4,10 +4,10 @@ Marketing site for [Candoa](https://github.com/aamancio/candoa), an
 open-source, Arc-inspired browser workspace for macOS.
 
 The production site is deployed on Vercel at [candoa.app](https://candoa.app).
-The download button serves the latest generated macOS disk image from:
+The download button serves the latest versioned macOS disk image from:
 
 ```text
-public/downloads/Candoa.dmg
+public/downloads/Candoa-<version>.dmg
 ```
 
 The site also reads the current app version and suggested download filename
@@ -54,16 +54,21 @@ pnpm build
 
 The Candoa browser repository owns app builds. On every `main` push there, a
 GitHub Actions workflow builds the macOS app, packages a drag-to-Applications
-DMG, and commits it into this repository at `public/downloads/Candoa.dmg`.
+DMG, and commits both a stable copy and a versioned archive into this
+repository:
+
+- `public/downloads/Candoa.dmg`
+- `public/downloads/Candoa-<version>.dmg`
 
 Once that commit lands on `main`, Vercel deploys the site and
-[https://candoa.app/downloads/Candoa.dmg](https://candoa.app/downloads/Candoa.dmg)
-serves the updated installer.
+[https://candoa.app/downloads/Candoa-<version>.dmg](https://candoa.app/downloads/Candoa-0.1.0.dmg)
+serves the user-facing installer.
 
-The stable URL stays `Candoa.dmg`, but the page uses `latest.json` to ask the
-browser to save the file with the app version, for example
-`Candoa 0.1.0.dmg`. Sparkle uses `appcast.xml` for in-app update detection,
-download, verification, and installation.
+The stable URL `Candoa.dmg` remains available as a fallback, but the page uses
+`latest.json` to point download buttons at the versioned archive so Finder shows
+the version in Downloads, for example `Candoa 0.1.0.dmg`. Sparkle uses
+`appcast.xml` for in-app update detection, download, verification, and
+installation.
 
 ## Deployment
 

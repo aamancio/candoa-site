@@ -2,7 +2,8 @@
   "version": "0.1.0",
   "build": "1",
   "fileName": "Candoa 0.1.0.dmg",
-  "downloadURL": "https://candoa.app/downloads/Candoa.dmg",
+  "downloadURL": "https://candoa.app/downloads/Candoa-0.1.0.dmg",
+  "stableDownloadURL": "https://candoa.app/downloads/Candoa.dmg",
   "archiveURL": "https://candoa.app/downloads/Candoa-0.1.0.dmg",
   "appcastURL": "https://candoa.app/downloads/appcast.xml",
   "releaseNotesURL": "https://github.com/aamancio/candoa/releases"
