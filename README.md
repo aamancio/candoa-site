@@ -1,85 +1,80 @@
-# Candoa Site
+# Candoa
 
-Marketing site for [Candoa](https://github.com/aamancio/candoa), an
-open-source, Arc-inspired browser workspace for macOS.
+Feel superhuman in the browser.
 
-The production site is deployed on Vercel at [candoa.app](https://candoa.app).
-The download button serves the stable macOS disk image from:
+Candoa is a native-feeling browser workspace for macOS. It keeps projects,
+tabs, and quick actions close together so everyday web work feels calmer,
+faster, and easier to return to.
+
+[Download Candoa](https://candoa.app/downloads/Candoa.dmg) ·
+[Visit candoa.app](https://candoa.app) ·
+[Browser app repository](https://github.com/aamancio/candoa)
+
+![Candoa browser screenshot](public/images/candoa-normal-tabs.png)
+
+## Why Candoa
+
+Modern work happens in the browser, but the browser still treats everything
+like one long pile of tabs. Candoa gives your web work a place to live.
+
+- Spaces keep projects, writing, research, and everyday browsing separated.
+- Vertical tabs make busy sessions easier to scan.
+- Quick actions help you open, switch, pin, close, and copy without breaking
+  flow.
+- A local-first Mac experience keeps the workspace focused on your work, not
+  another feed.
+
+## Built For
+
+Candoa is for people who live in the browser: builders, researchers, writers,
+students, and anyone who moves between tabs all day.
+
+It is still early, but the goal is clear: a calmer, more capable browser for
+Mac productivity.
+
+## Download
+
+The public macOS download is always:
+
+```text
+https://candoa.app/downloads/Candoa.dmg
+```
+
+Open the DMG, drag Candoa into Applications, then launch it from Applications.
+
+## For Maintainers
+
+This repository contains the marketing site for Candoa. The macOS app lives in
+[`aamancio/candoa`](https://github.com/aamancio/candoa).
+
+The site is deployed on Vercel at:
+
+- [candoa.app](https://candoa.app)
+- [www.candoa.app](https://www.candoa.app)
+- [candoa.vercel.app](https://candoa.vercel.app)
+
+App builds are owned by the browser repository. Its GitHub Actions workflow can
+publish the latest drag-to-Applications DMG into this repository at:
 
 ```text
 public/downloads/Candoa.dmg
 ```
 
-The site also reads the current app version and suggested download filename
-from:
+Keep the public download link pointed at `/downloads/Candoa.dmg`. Versioned DMG
+archives can also live in `public/downloads/` for internal handoff. Sparkle
+updates use `public/downloads/appcast.xml`, and the site reads the displayed app
+version from `public/downloads/latest.json`.
 
-```text
-public/downloads/latest.json
-```
-
-Sparkle in-app updates use:
-
-```text
-public/downloads/appcast.xml
-```
-
-## Tech Stack
-
-- Next.js App Router
-- React
-- TypeScript
-- Tailwind CSS
-- shadcn/ui components
-- Vercel hosting
-
-## Local Development
-
-Install dependencies and start the development server:
+Local development:
 
 ```sh
 pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-Useful commands:
+Useful checks:
 
 ```sh
 pnpm lint
 pnpm build
 ```
-
-## Download Flow
-
-The Candoa browser repository owns app builds. On every `main` push there, a
-GitHub Actions workflow builds the macOS app, packages a drag-to-Applications
-DMG, and commits both a stable copy and a versioned archive into this
-repository:
-
-- `public/downloads/Candoa.dmg`
-- `public/downloads/Candoa-<version>.dmg`
-
-Once that commit lands on `main`, Vercel deploys the site and
-[https://candoa.app/downloads/Candoa.dmg](https://candoa.app/downloads/Candoa.dmg)
-serves the user-facing installer.
-
-The versioned archive remains available for internal handoff, while the public
-site keeps download links on `Candoa.dmg`. `latest.json` supplies the displayed
-version and suggested Finder filename, for example `Candoa 0.1.0.dmg`. Sparkle
-uses `appcast.xml` for in-app update detection, download, verification, and
-installation.
-
-## Deployment
-
-This repository is connected to the Vercel project `candoa`. Pushing to `main`
-creates a production deployment for:
-
-- [candoa.app](https://candoa.app)
-- [www.candoa.app](https://www.candoa.app)
-- [candoa.vercel.app](https://candoa.vercel.app)
-
-## Related Repositories
-
-- Browser app: [aamancio/candoa](https://github.com/aamancio/candoa)
-- Marketing site: [aamancio/candoa-site](https://github.com/aamancio/candoa-site)
