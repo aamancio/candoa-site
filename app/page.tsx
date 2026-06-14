@@ -1,4 +1,5 @@
 import Image from "next/image";
+import appScreenshotImage from "@/public/images/candoa-normal-tabs.png";
 import {
   ArrowDownToLine,
   ChevronRight,
@@ -137,12 +138,11 @@ function AppScreenshot() {
     <div className="mt-12 w-full max-w-6xl overflow-hidden rounded-[28px] border border-border bg-card shadow-2xl shadow-foreground/10 sm:mt-14">
       <div className="overflow-hidden rounded-[26px] border border-border bg-muted">
         <Image
-          src="/images/candoa-normal-tabs.png"
+          src={appScreenshotImage}
           alt="Candoa browser showing Google open with Gmail and YouTube in the sidebar"
-          width={5120}
-          height={2820}
-          priority
-          unoptimized
+          preload
+          placeholder="blur"
+          quality={70}
           sizes="(min-width: 1280px) 1152px, 100vw"
           className="h-auto w-[820px] max-w-none -translate-x-28 sm:w-full sm:translate-x-0"
         />

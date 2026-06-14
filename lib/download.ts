@@ -1,11 +1,11 @@
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import manifest from "@/public/downloads/latest.json";
 
 type DownloadManifest = {
   version?: string;
   fileName?: string;
   downloadURL?: string;
   archiveURL?: string;
+  stableDownloadURL?: string;
 };
 
 export type DownloadInfo = {
@@ -17,13 +17,12 @@ export type DownloadInfo = {
 const fallbackVersion = "0.1.0";
 
 export function getDownloadInfo(): DownloadInfo {
-  const manifest = readDownloadManifest();
-  const version = manifest?.version?.trim() || fallbackVersion;
-  const fileName = manifest?.fileName?.trim() || `Candoa ${version}.dmg`;
+  const downloadManifest = manifest as DownloadManifest;
+  const version = downloadManifest.version?.trim() || fallbackVersion;
+  const fileName = downloadManifest.fileName?.trim() || `Candoa ${version}.dmg`;
   const href =
-    normalizeDownloadHref(manifest?.archiveURL) ||
-    normalizeDownloadHref(manifest?.downloadURL) ||
-    `/downloads/Candoa-${version}.dmg`;
+    normalizeDownloadHref(downloadManifest.stableDownloadURL) ||
+    "/downloads/Candoa.dmg";
 
   return {
     href,
@@ -50,18 +49,4 @@ function normalizeDownloadHref(value: string | undefined): string | undefined {
   }
 
   return href;
-}
-
-function readDownloadManifest(): DownloadManifest | undefined {
-  try {
-    const manifestPath = join(
-      process.cwd(),
-      "public",
-      "downloads",
-      "latest.json",
-    );
-    return JSON.parse(readFileSync(manifestPath, "utf8")) as DownloadManifest;
-  } catch {
-    return undefined;
-  }
 }
