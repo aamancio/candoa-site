@@ -10,6 +10,13 @@ The download button serves the latest generated macOS disk image from:
 public/downloads/Candoa.dmg
 ```
 
+The site also reads the current app version and suggested download filename
+from:
+
+```text
+public/downloads/latest.json
+```
+
 ## Tech Stack
 
 - Next.js App Router
@@ -46,6 +53,10 @@ DMG, and commits it into this repository at `public/downloads/Candoa.dmg`.
 Once that commit lands on `main`, Vercel deploys the site and
 [https://candoa.app/downloads/Candoa.dmg](https://candoa.app/downloads/Candoa.dmg)
 serves the updated installer.
+
+The stable URL stays `Candoa.dmg`, but the page uses `latest.json` to ask the
+browser to save the file with the app version, for example
+`Candoa 0.1.0.dmg`. The same manifest is used by the app's update checker.
 
 ## Deployment
 

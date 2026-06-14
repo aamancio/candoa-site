@@ -13,6 +13,8 @@ import {
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { getDownloadInfo } from "@/lib/download";
+import type { DownloadInfo } from "@/lib/download";
 
 const features = [
   {
@@ -38,9 +40,11 @@ const features = [
 ];
 
 export default function Home() {
+  const downloadInfo = getDownloadInfo();
+
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
-      <Header />
+      <Header downloadInfo={downloadInfo} />
       <section className="mx-auto flex w-full max-w-6xl flex-col items-center px-5 pb-20 pt-20 text-center sm:px-8 lg:pb-28 lg:pt-24">
         <Badge
           variant="outline"
@@ -65,7 +69,7 @@ export default function Home() {
             size="lg"
             className="h-11 w-full rounded-full px-5 sm:w-auto"
           >
-            <a href="/downloads/Candoa.dmg" download>
+            <a href={downloadInfo.href} download={downloadInfo.fileName}>
               <ArrowDownToLine className="size-4" />
               Download for macOS
             </a>
@@ -88,13 +92,13 @@ export default function Home() {
 
       <FeatureSection />
       <ValuesSection />
-      <DownloadSection />
-      <Footer />
+      <DownloadSection downloadInfo={downloadInfo} />
+      <Footer downloadInfo={downloadInfo} />
     </main>
   );
 }
 
-function Header() {
+function Header({ downloadInfo }: { downloadInfo: DownloadInfo }) {
   return (
     <header className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
       <a href="#" className="flex items-center gap-2.5 text-sm font-medium">
@@ -111,15 +115,15 @@ function Header() {
           Values
         </a>
         <a
-          href="/downloads/Candoa.dmg"
-          download
+          href={downloadInfo.href}
+          download={downloadInfo.fileName}
           className="transition-colors hover:text-foreground"
         >
           Download
         </a>
       </nav>
       <Button asChild variant="outline" size="sm" className="rounded-full">
-        <a href="/downloads/Candoa.dmg" download>
+        <a href={downloadInfo.href} download={downloadInfo.fileName}>
           Get Candoa
           <ArrowDownToLine className="size-4" />
         </a>
@@ -225,7 +229,7 @@ function ValueItem({
   );
 }
 
-function DownloadSection() {
+function DownloadSection({ downloadInfo }: { downloadInfo: DownloadInfo }) {
   return (
     <section
       id="download"
@@ -250,20 +254,20 @@ function DownloadSection() {
         size="lg"
         className="mt-8 h-11 rounded-full px-5"
       >
-        <a href="/downloads/Candoa.dmg" download>
+        <a href={downloadInfo.href} download={downloadInfo.fileName}>
           <ArrowDownToLine className="size-4" />
           Download for macOS
         </a>
       </Button>
       <p className="mt-4 text-sm text-muted-foreground">
-        Open the DMG, drag Candoa into Applications, then launch it from
-        Applications.
+        Version {downloadInfo.version}. Open the DMG, drag Candoa into
+        Applications, then launch it from Applications.
       </p>
     </section>
   );
 }
 
-function Footer() {
+function Footer({ downloadInfo }: { downloadInfo: DownloadInfo }) {
   return (
     <footer className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-5 pb-10 text-sm text-muted-foreground sm:px-8 md:flex-row md:items-center md:justify-between">
       <p>Candoa</p>
@@ -278,8 +282,8 @@ function Footer() {
           Features
         </a>
         <a
-          href="/downloads/Candoa.dmg"
-          download
+          href={downloadInfo.href}
+          download={downloadInfo.fileName}
           className="hover:text-foreground"
         >
           Download
