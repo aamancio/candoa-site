@@ -65,7 +65,7 @@ export default function Home() {
             size="lg"
             className="h-11 w-full rounded-full px-5 sm:w-auto"
           >
-            <a href="#download">
+            <a href="/downloads/Candoa.dmg" download>
               <ArrowDownToLine className="size-4" />
               Download for macOS
             </a>
@@ -110,14 +110,18 @@ function Header() {
         <a href="#values" className="transition-colors hover:text-foreground">
           Values
         </a>
-        <a href="#download" className="transition-colors hover:text-foreground">
+        <a
+          href="/downloads/Candoa.dmg"
+          download
+          className="transition-colors hover:text-foreground"
+        >
           Download
         </a>
       </nav>
       <Button asChild variant="outline" size="sm" className="rounded-full">
-        <a href="#download">
+        <a href="/downloads/Candoa.dmg" download>
           Get Candoa
-          <ChevronRight className="size-4" />
+          <ArrowDownToLine className="size-4" />
         </a>
       </Button>
     </header>
@@ -273,7 +277,11 @@ function Footer() {
         <a href="#features" className="hover:text-foreground">
           Features
         </a>
-        <a href="#download" className="hover:text-foreground">
+        <a
+          href="/downloads/Candoa.dmg"
+          download
+          className="hover:text-foreground"
+        >
           Download
         </a>
       </div>
