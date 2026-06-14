@@ -1,65 +1,282 @@
 import Image from "next/image";
+import {
+  ArrowDownToLine,
+  ChevronRight,
+  Command,
+  GalleryVerticalEnd,
+  Globe2,
+  Layers3,
+  Lock,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
+
+const features = [
+  {
+    icon: GalleryVerticalEnd,
+    title: "Spaces for every mission",
+    body: "Separate projects, writing, research, and everyday browsing so each context is ready when you are.",
+  },
+  {
+    icon: Globe2,
+    title: "Everything at your fingertips",
+    body: "Keep Google, Gmail, YouTube, docs, and research in one command-ready sidebar instead of a pile of windows.",
+  },
+  {
+    icon: Command,
+    title: "Keyboard-first speed",
+    body: "Open, switch, pin, close, and copy tabs with shortcuts that make browsing feel instant.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Private by default",
+    body: "A personal browser workspace that keeps your tabs yours and avoids turning your web into another feed.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main className="min-h-screen overflow-hidden bg-background text-foreground">
+      <Header />
+      <section className="mx-auto flex w-full max-w-6xl flex-col items-center px-5 pb-20 pt-20 text-center sm:px-8 lg:pb-28 lg:pt-24">
+        <Badge
+          variant="outline"
+          className="mb-8 h-7 border-border bg-card px-3 text-foreground"
+        >
+          <Sparkles className="size-3.5 text-candoa-accent" />
+          Superhuman Mac productivity
+        </Badge>
+
+        <h1 className="max-w-4xl text-balance text-5xl font-semibold leading-[0.95] tracking-normal text-foreground sm:text-7xl lg:text-8xl">
+          feel superhuman in the browser
+        </h1>
+        <p className="mt-7 max-w-2xl text-pretty text-base leading-7 text-muted-foreground sm:text-lg">
+          Candoa is a productivity browser for macOS with spaces, vertical tabs,
+          quick actions, and an Ask flow that helps you move through the web
+          faster.
+        </p>
+
+        <div className="mt-8 flex w-full max-w-md flex-col items-center justify-center gap-3 sm:flex-row">
+          <Button
+            asChild
+            size="lg"
+            className="h-11 w-full rounded-full px-5 sm:w-auto"
+          >
+            <a href="#download">
+              <ArrowDownToLine className="size-4" />
+              Download for macOS
+            </a>
+          </Button>
+          <Button
+            asChild
+            variant="secondary"
+            size="lg"
+            className="h-11 w-full rounded-full border border-border px-5 sm:w-auto"
+          >
+            <a href="#features">
+              Learn more
+              <ChevronRight className="size-4" />
+            </a>
+          </Button>
+        </div>
+
+        <AppScreenshot />
+      </section>
+
+      <FeatureSection />
+      <ValuesSection />
+      <DownloadSection />
+      <Footer />
+    </main>
+  );
+}
+
+function Header() {
+  return (
+    <header className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
+      <a href="#" className="flex items-center gap-2.5 text-sm font-medium">
+        <span className="flex size-7 items-center justify-center rounded-full border border-border bg-card">
+          <Globe2 className="size-3.5 text-candoa-accent" />
+        </span>
+        Candoa
+      </a>
+      <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
+        <a href="#features" className="transition-colors hover:text-foreground">
+          Features
+        </a>
+        <a href="#values" className="transition-colors hover:text-foreground">
+          Values
+        </a>
+        <a href="#download" className="transition-colors hover:text-foreground">
+          Download
+        </a>
+      </nav>
+      <div className="flex items-center gap-2">
+        <ThemeToggle />
+        <Button asChild variant="outline" size="sm" className="rounded-full">
+          <a href="#download">
+            Get Candoa
+            <ChevronRight className="size-4" />
+          </a>
+        </Button>
+      </div>
+    </header>
+  );
+}
+
+function AppScreenshot() {
+  return (
+    <div className="mt-12 w-full max-w-6xl overflow-hidden rounded-[28px] border border-border bg-card shadow-2xl shadow-foreground/10 sm:mt-14">
+      <div className="overflow-hidden rounded-[26px] border border-border bg-muted">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/images/candoa-normal-tabs.png"
+          alt="Candoa browser showing Google open with Gmail and YouTube in the sidebar"
+          width={5120}
+          height={2820}
           priority
+          unoptimized
+          sizes="(min-width: 1280px) 1152px, 100vw"
+          className="h-auto w-[820px] max-w-none -translate-x-28 sm:w-full sm:translate-x-0"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
     </div>
+  );
+}
+
+function FeatureSection() {
+  return (
+    <section
+      id="features"
+      className="mx-auto grid w-full max-w-6xl gap-10 px-5 py-24 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]"
+    >
+      <div>
+        <p className="text-sm font-medium text-candoa-accent">Productivity</p>
+        <h2 className="mt-4 max-w-md text-4xl font-semibold tracking-normal text-foreground sm:text-5xl">
+          Move through the web at command speed.
+        </h2>
+        <p className="mt-5 max-w-md leading-7 text-muted-foreground">
+          Candoa keeps projects, tabs, and actions close by so the browser feels
+          like an extension of your workflow instead of another place to manage.
+        </p>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {features.map((feature) => (
+          <article
+            key={feature.title}
+            className="rounded-2xl border border-border bg-card p-5"
+          >
+            <feature.icon className="mb-5 size-5 text-candoa-accent" />
+            <h3 className="text-lg font-medium text-foreground">
+              {feature.title}
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              {feature.body}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ValuesSection() {
+  return (
+    <section id="values" className="border-y border-border bg-muted/40">
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-3">
+        <ValueItem
+          icon={Layers3}
+          title="Fast by design"
+          body="A browser shell tuned for repeated work, quick switching, and fewer wasted clicks."
+        />
+        <ValueItem
+          icon={Lock}
+          title="Local first"
+          body="Browsing history and workspace state are designed to stay on your Mac."
+        />
+        <ValueItem
+          icon={Globe2}
+          title="Native Mac feel"
+          body="Built around the rhythm of Mac work: fast shortcuts, native controls, and less visual noise."
+        />
+      </div>
+    </section>
+  );
+}
+
+function ValueItem({
+  icon: Icon,
+  title,
+  body,
+}: {
+  icon: typeof Layers3;
+  title: string;
+  body: string;
+}) {
+  return (
+    <div>
+      <Icon className="mb-5 size-5 text-candoa-accent" />
+      <h3 className="text-xl font-medium text-foreground">{title}</h3>
+      <p className="mt-3 text-sm leading-6 text-muted-foreground">{body}</p>
+    </div>
+  );
+}
+
+function DownloadSection() {
+  return (
+    <section
+      id="download"
+      className="mx-auto flex w-full max-w-4xl flex-col items-center px-5 py-24 text-center sm:px-8"
+    >
+      <Badge
+        variant="secondary"
+        className="mb-6 h-7 px-3"
+      >
+        Early prototype
+      </Badge>
+      <h2 className="text-balance text-4xl font-semibold tracking-normal text-foreground sm:text-6xl">
+        built for people who live in the browser
+      </h2>
+      <p className="mt-6 max-w-xl text-pretty leading-7 text-muted-foreground">
+        Candoa is still early. The first public site should show the browser as
+        it is: native-feeling, opinionated, and focused on making everyday web
+        work feel faster.
+      </p>
+      <Button
+        asChild
+        size="lg"
+        className="mt-8 h-11 rounded-full px-5"
+      >
+        <a href="https://x.com/AlexAmancio6">
+          Follow announcements
+          <ChevronRight className="size-4" />
+        </a>
+      </Button>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-5 pb-10 text-sm text-muted-foreground sm:px-8 md:flex-row md:items-center md:justify-between">
+      <p>Candoa</p>
+      <div className="flex gap-5">
+        <a href="https://x.com/AlexAmancio6" className="hover:text-foreground">
+          X
+        </a>
+        <a href="https://github.com/aamancio/candoa" className="hover:text-foreground">
+          GitHub
+        </a>
+        <a href="#features" className="hover:text-foreground">
+          Features
+        </a>
+        <a href="#download" className="hover:text-foreground">
+          Download
+        </a>
+      </div>
+    </footer>
   );
 }
