@@ -13,7 +13,6 @@ import {
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 const features = [
   {
@@ -115,15 +114,12 @@ function Header() {
           Download
         </a>
       </nav>
-      <div className="flex items-center gap-2">
-        <ThemeToggle />
-        <Button asChild variant="outline" size="sm" className="rounded-full">
-          <a href="#download">
-            Get Candoa
-            <ChevronRight className="size-4" />
-          </a>
-        </Button>
-      </div>
+      <Button asChild variant="outline" size="sm" className="rounded-full">
+        <a href="#download">
+          Get Candoa
+          <ChevronRight className="size-4" />
+        </a>
+      </Button>
     </header>
   );
 }
@@ -250,11 +246,15 @@ function DownloadSection() {
         size="lg"
         className="mt-8 h-11 rounded-full px-5"
       >
-        <a href="https://x.com/AlexAmancio6">
-          Follow announcements
-          <ChevronRight className="size-4" />
+        <a href="/downloads/Candoa.dmg" download>
+          <ArrowDownToLine className="size-4" />
+          Download for macOS
         </a>
       </Button>
+      <p className="mt-4 text-sm text-muted-foreground">
+        Open the DMG, drag Candoa into Applications, then launch it from
+        Applications.
+      </p>
     </section>
   );
 }
