@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 type DemoPageProps = {
   eyebrow: string;
@@ -29,20 +28,17 @@ export function DemoPage({
   return (
     <main className="min-h-screen bg-background px-6 py-8 text-foreground">
       <div className="mx-auto max-w-5xl">
-        <div className="mb-10 flex items-center justify-between">
-          <Button
-            asChild
-            variant="ghost"
-            size="sm"
-            className="rounded-full text-muted-foreground"
-          >
-            <Link href="/">
-              <ArrowLeft className="size-4" />
-              Candoa
-            </Link>
-          </Button>
-          <ThemeToggle />
-        </div>
+        <Button
+          asChild
+          variant="ghost"
+          size="sm"
+          className="mb-10 rounded-full text-muted-foreground"
+        >
+          <Link href="/">
+            <ArrowLeft className="size-4" />
+            Candoa
+          </Link>
+        </Button>
 
         <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
