@@ -4,7 +4,7 @@
         <title>Candoa</title>
         <item>
             <title>0.1.0</title>
-            <pubDate>Sun, 14 Jun 2026 17:52:50 +0000</pubDate>
+            <pubDate>Sun, 14 Jun 2026 17:56:37 +0000</pubDate>
             <link>https://candoa.app</link>
             <sparkle:version>1</sparkle:version>
             <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
@@ -12,9 +12,9 @@
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
             <description sparkle:format="markdown"><![CDATA[# Candoa 0.1.0
 
-This update was generated automatically from Candoa commit 93364cd.
+This update was generated automatically from Candoa commit c8756b3.
 ]]></description>
-            <enclosure url="https://candoa.app/downloads/Candoa-0.1.0.dmg" length="2546123" type="application/octet-stream" sparkle:edSignature="sLGCQ6V+YIoCh4gJbA8qmiymOK2K9RWENPil5VZ39of6TbXlqmu152t7OtwyxqnUDidZLYmtEcqb0es50QFJCw=="/>
+            <enclosure url="https://candoa.app/downloads/Candoa-0.1.0.dmg" length="2546112" type="application/octet-stream" sparkle:edSignature="hvYGHOhLK7BnNrXCLLAn78/nFHJsNC83zyAVhg/NJwwZv1DUVl3Od5c7nc0i9WHIVqIpaIJSn73xvzU5GTXTDQ=="/>
         </item>
     </channel>
 </rss>
