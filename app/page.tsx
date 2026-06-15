@@ -2,11 +2,11 @@ import Image from "next/image";
 import appScreenshotImage from "@/public/images/candoa-normal-tabs.png";
 import {
   ArrowDownToLine,
+  BatteryFull,
   ChevronRight,
   Command,
   GalleryVerticalEnd,
   Globe2,
-  Layers3,
   Lock,
   ShieldCheck,
   Sparkles,
@@ -192,19 +192,19 @@ function ValuesSection() {
     <section id="values" className="border-y border-border bg-muted/40">
       <div className="mx-auto grid max-w-6xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-3">
         <ValueItem
-          icon={Layers3}
-          title="Fast by design"
-          body="A browser shell tuned for repeated work, quick switching, and fewer wasted clicks."
+          icon={BatteryFull}
+          title="Lighter on battery"
+          body="Candoa is designed to use less memory and energy than heavyweight Chromium and Firefox-based browsers."
+        />
+        <ValueItem
+          icon={Command}
+          title="Unapologetically Mac-first"
+          body="Built only for macOS with native Apple technologies, so it feels like a real Mac app."
         />
         <ValueItem
           icon={Lock}
-          title="Local first"
-          body="Browsing history and workspace state are designed to stay on your Mac."
-        />
-        <ValueItem
-          icon={Globe2}
-          title="Native Mac feel"
-          body="Built around the rhythm of Mac work: fast shortcuts, native controls, and less visual noise."
+          title="Apple-native foundations"
+          body="Candoa leans on system WebKit, Keychain, iCloud, and macOS conventions instead of rebuilding everything from scratch."
         />
       </div>
     </section>
@@ -216,7 +216,7 @@ function ValueItem({
   title,
   body,
 }: {
-  icon: typeof Layers3;
+  icon: typeof Globe2;
   title: string;
   body: string;
 }) {
