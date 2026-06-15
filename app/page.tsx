@@ -92,7 +92,7 @@ export default function Home() {
       <FeatureSection />
       <ValuesSection />
       <DownloadSection downloadInfo={downloadInfo} />
-      <Footer downloadInfo={downloadInfo} />
+      <Footer />
     </main>
   );
 }
@@ -114,8 +114,7 @@ function Header({ downloadInfo }: { downloadInfo: DownloadInfo }) {
           Values
         </a>
         <a
-          href={downloadInfo.href}
-          download={downloadInfo.fileName}
+          href="#download"
           className="transition-colors hover:text-foreground"
         >
           Download
@@ -265,7 +264,7 @@ function DownloadSection({ downloadInfo }: { downloadInfo: DownloadInfo }) {
   );
 }
 
-function Footer({ downloadInfo }: { downloadInfo: DownloadInfo }) {
+function Footer() {
   return (
     <footer className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-5 pb-10 text-sm text-muted-foreground sm:px-8 md:flex-row md:items-center md:justify-between">
       <p>Candoa</p>
@@ -280,8 +279,7 @@ function Footer({ downloadInfo }: { downloadInfo: DownloadInfo }) {
           Features
         </a>
         <a
-          href={downloadInfo.href}
-          download={downloadInfo.fileName}
+          href="#download"
           className="hover:text-foreground"
         >
           Download
