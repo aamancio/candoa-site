@@ -1,6 +1,6 @@
 # Candoa
 
-Feel superhuman in the browser.
+A calmer browser workspace for macOS.
 
 Candoa is a native-feeling browser workspace for macOS. It keeps projects,
 tabs, and quick actions close together so everyday web work feels calmer,
