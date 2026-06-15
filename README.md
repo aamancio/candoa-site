@@ -6,9 +6,7 @@ Candoa is a native-feeling browser workspace for macOS. It keeps projects,
 tabs, and quick actions close together so everyday web work feels calmer,
 faster, and easier to return to.
 
-[Download Candoa](https://candoa.app/downloads/Candoa.dmg) ·
-[Visit candoa.app](https://candoa.app) ·
-[Browser app repository](https://github.com/aamancio/candoa)
+[Visit candoa.app](https://candoa.app)
 
 ![Candoa browser screenshot](public/images/candoa-normal-tabs.png)
 
@@ -34,38 +32,18 @@ Mac productivity.
 
 ## Download
 
-The public macOS download is always:
+Get the latest public build from the website:
 
-```text
-https://candoa.app/downloads/Candoa.dmg
-```
+[candoa.app](https://candoa.app)
 
-Open the DMG, drag Candoa into Applications, then launch it from Applications.
+## Related
 
-## For Maintainers
+- Website: [candoa.app](https://candoa.app)
+- macOS app source: [aamancio/candoa](https://github.com/aamancio/candoa)
 
-This repository contains the marketing site for Candoa. The macOS app lives in
-[`aamancio/candoa`](https://github.com/aamancio/candoa).
+## Development
 
-The site is deployed on Vercel at:
-
-- [candoa.app](https://candoa.app)
-- [www.candoa.app](https://www.candoa.app)
-- [candoa.vercel.app](https://candoa.vercel.app)
-
-App builds are owned by the browser repository. Its GitHub Actions workflow can
-publish the latest drag-to-Applications DMG into this repository at:
-
-```text
-public/downloads/Candoa.dmg
-```
-
-Keep the public download link pointed at `/downloads/Candoa.dmg`. Versioned DMG
-archives can also live in `public/downloads/` for internal handoff. Sparkle
-updates use `public/downloads/appcast.xml`, and the site reads the displayed app
-version from `public/downloads/latest.json`.
-
-Local development:
+Run the site locally:
 
 ```sh
 pnpm install
