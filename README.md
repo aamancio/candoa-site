@@ -8,8 +8,6 @@ faster, and easier to return to.
 
 [Visit candoa.app](https://candoa.app)
 
-![Candoa browser screenshot](public/images/candoa-normal-tabs.png)
-
 ## Why Candoa
 
 Modern work happens in the browser, but the browser still treats everything
