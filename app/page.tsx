@@ -26,7 +26,7 @@ const features = [
   {
     icon: Globe2,
     title: "Everything at your fingertips",
-    body: "Keep Google, Gmail, YouTube, docs, and research in one command-ready sidebar instead of a pile of windows.",
+    body: "Keep Google, Gmail, YouTube, docs, and research in one command-ready workspace instead of a pile of windows.",
   },
   {
     icon: Command,
@@ -59,9 +59,7 @@ export default function Home() {
           Candoa
         </h1>
         <p className="mt-7 max-w-2xl text-pretty text-base leading-7 text-muted-foreground sm:text-lg">
-          Candoa is a productivity browser for macOS with spaces, vertical tabs,
-          quick actions, and an Ask flow that helps you move through the web
-          faster.
+          A lightweight Mac browser workspace for people who live in tabs.
         </p>
 
         <div className="mt-8 flex w-full max-w-md flex-col items-center justify-center gap-3 sm:flex-row">
@@ -163,8 +161,8 @@ function FeatureSection() {
           Move through the web at command speed.
         </h2>
         <p className="mt-5 max-w-md leading-7 text-muted-foreground">
-          Candoa keeps projects, tabs, and actions close by so the browser feels
-          like an extension of your workflow instead of another place to manage.
+          Vertical tabs, spaces, pinned tabs, and keyboard-first navigation keep
+          projects close without weighing down your Mac.
         </p>
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
