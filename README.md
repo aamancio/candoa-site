@@ -37,7 +37,7 @@ Get the latest public build from the website:
 ## Related
 
 - Website: [candoa.app](https://candoa.app)
-- macOS app source: [aamancio/candoa](https://github.com/aamancio/candoa)
+- macOS app source: [aamancio/candoa-browser](https://github.com/aamancio/candoa-browser)
 
 ## Development
 

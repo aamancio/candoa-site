@@ -273,7 +273,7 @@ function Footer({ downloadInfo }: { downloadInfo: DownloadInfo }) {
         <a href="https://x.com/AlexAmancio6" className="hover:text-foreground">
           X
         </a>
-        <a href="https://github.com/aamancio/candoa" className="hover:text-foreground">
+        <a href="https://github.com/aamancio/candoa-browser" className="hover:text-foreground">
           GitHub
         </a>
         <a href="#features" className="hover:text-foreground">
