@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Candoa",
-  description: "A native-feeling browser built for superhuman Mac productivity.",
+  description: "A lightweight browser workspace for macOS.",
 };
 
 export default function RootLayout({

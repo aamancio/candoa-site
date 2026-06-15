@@ -4,7 +4,7 @@ export default function BriefPage() {
   return (
     <DemoPage
       eyebrow="Launch brief"
-      title="A browser workspace for superhuman speed"
+      title="A browser workspace built for speed"
       description="Position Candoa around fast Mac productivity: fewer scattered windows, clearer project context, and command-driven browsing."
       accent="#8aa2ff"
       timeline={[

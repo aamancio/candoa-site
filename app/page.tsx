@@ -52,11 +52,11 @@ export default function Home() {
           className="mb-8 h-7 border-border bg-card px-3 text-foreground"
         >
           <Sparkles className="size-3.5 text-candoa-accent" />
-          Superhuman Mac productivity
+          WebKit-native Mac browser
         </Badge>
 
         <h1 className="max-w-4xl text-balance text-5xl font-semibold leading-[0.95] tracking-normal text-foreground sm:text-7xl lg:text-8xl">
-          feel superhuman in the browser
+          Candoa
         </h1>
         <p className="mt-7 max-w-2xl text-pretty text-base leading-7 text-muted-foreground sm:text-lg">
           Candoa is a productivity browser for macOS with spaces, vertical tabs,
