@@ -1,6 +1,7 @@
 {
   "version": "0.1.1",
   "build": "2",
+  "bundleIdentifier": "app.candoa.Candoa",
   "fileName": "Candoa 0.1.1.dmg",
   "downloadURL": "https://candoa.app/downloads/Candoa-0.1.1.dmg",
   "stableDownloadURL": "https://candoa.app/downloads/Candoa.dmg",
