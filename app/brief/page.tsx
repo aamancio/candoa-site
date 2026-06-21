@@ -1,4 +1,18 @@
+import type { Metadata } from "next";
 import { DemoPage } from "@/app/demo-pages";
+
+export const metadata: Metadata = {
+  title: "Launch Brief",
+  description:
+    "Internal launch brief for the Candoa marketing site positioning and release planning.",
+  alternates: {
+    canonical: "/brief",
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function BriefPage() {
   return (

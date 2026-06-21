@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import appScreenshotImage from "@/public/images/candoa-normal-tabs.png";
 import {
   ArrowDownToLine,
@@ -42,9 +43,30 @@ const features = [
 
 export default function Home() {
   const downloadInfo = getDownloadInfo();
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Candoa",
+    applicationCategory: "BrowserApplication",
+    operatingSystem: "macOS",
+    description:
+      "A WebKit-native Mac browser workspace with spaces, vertical tabs, and keyboard-first navigation.",
+    downloadUrl: `https://www.candoa.app${downloadInfo.href}`,
+    url: "https://www.candoa.app/",
+    image: "https://www.candoa.app/images/candoa-normal-tabs.png",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+  };
 
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Header downloadInfo={downloadInfo} />
       <section className="mx-auto flex w-full max-w-6xl flex-col items-center px-5 pb-20 pt-20 text-center sm:px-8 lg:pb-28 lg:pt-24">
         <Badge
@@ -100,12 +122,12 @@ export default function Home() {
 function Header({ downloadInfo }: { downloadInfo: DownloadInfo }) {
   return (
     <header className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
-      <a href="#" className="flex items-center gap-2.5 text-sm font-medium">
+      <Link href="/" className="flex items-center gap-2.5 text-sm font-medium">
         <span className="flex size-7 items-center justify-center rounded-full border border-border bg-card">
           <Globe2 className="size-3.5 text-candoa-accent" />
         </span>
         Candoa
-      </a>
+      </Link>
       <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
         <a href="#features" className="transition-colors hover:text-foreground">
           Features

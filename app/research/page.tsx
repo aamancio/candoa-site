@@ -1,4 +1,18 @@
+import type { Metadata } from "next";
 import { DemoPage } from "@/app/demo-pages";
+
+export const metadata: Metadata = {
+  title: "Research Space",
+  description:
+    "Internal research workspace page for the Candoa launch site and positioning notes.",
+  alternates: {
+    canonical: "/research",
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function ResearchPage() {
   return (

@@ -1,4 +1,18 @@
+import type { Metadata } from "next";
 import { DemoPage } from "@/app/demo-pages";
+
+export const metadata: Metadata = {
+  title: "Release Checklist",
+  description:
+    "Internal release checklist page for the Candoa marketing site and launch workflow.",
+  alternates: {
+    canonical: "/checklist",
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function ChecklistPage() {
   return (

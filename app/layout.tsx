@@ -14,8 +14,39 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Candoa",
-  description: "A lightweight browser workspace for macOS.",
+  metadataBase: new URL("https://www.candoa.app"),
+  title: {
+    default: "Candoa | Mac Browser Workspace",
+    template: "%s | Candoa",
+  },
+  description:
+    "Candoa is a WebKit-native Mac browser workspace with spaces, vertical tabs, and keyboard-first navigation designed to feel lighter on battery and easier to work from all day.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Candoa",
+    title: "Candoa | Mac Browser Workspace",
+    description:
+      "A WebKit-native browser workspace for macOS with spaces, vertical tabs, and keyboard-first navigation.",
+    images: [
+      {
+        url: "/images/candoa-normal-tabs.png",
+        width: 5120,
+        height: 2820,
+        alt: "Candoa browser workspace showing a Mac-native browsing layout with vertical tabs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Candoa | Mac Browser Workspace",
+    description:
+      "A WebKit-native browser workspace for macOS with spaces, vertical tabs, and keyboard-first navigation.",
+    images: ["/images/candoa-normal-tabs.png"],
+  },
 };
 
 export default function RootLayout({
