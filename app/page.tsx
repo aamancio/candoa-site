@@ -43,6 +43,7 @@ const features = [
 
 export default function Home() {
   const downloadInfo = getDownloadInfo();
+  const downloadLabel = getDownloadLabel(downloadInfo);
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -67,7 +68,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <Header downloadInfo={downloadInfo} />
+      <Header downloadInfo={downloadInfo} downloadLabel={downloadLabel} />
       <section className="mx-auto flex w-full max-w-6xl flex-col items-center px-5 pb-20 pt-20 text-center sm:px-8 lg:pb-28 lg:pt-24">
         <Badge
           variant="outline"
@@ -92,7 +93,7 @@ export default function Home() {
           >
             <a href={downloadInfo.href} download={downloadInfo.fileName}>
               <ArrowDownToLine className="size-4" />
-              Download for macOS
+              {downloadLabel}
             </a>
           </Button>
           <Button
@@ -113,13 +114,26 @@ export default function Home() {
 
       <FeatureSection />
       <ValuesSection />
-      <DownloadSection downloadInfo={downloadInfo} />
+      <DownloadSection
+        downloadInfo={downloadInfo}
+        downloadLabel={downloadLabel}
+      />
       <Footer />
     </main>
   );
 }
 
-function Header({ downloadInfo }: { downloadInfo: DownloadInfo }) {
+function getDownloadLabel(downloadInfo: DownloadInfo) {
+  return `Download Candoa ${downloadInfo.version}`;
+}
+
+function Header({
+  downloadInfo,
+  downloadLabel,
+}: {
+  downloadInfo: DownloadInfo;
+  downloadLabel: string;
+}) {
   return (
     <header className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
       <Link href="/" className="flex items-center gap-2.5 text-sm font-medium">
@@ -144,7 +158,7 @@ function Header({ downloadInfo }: { downloadInfo: DownloadInfo }) {
       </nav>
       <Button asChild variant="outline" size="sm" className="rounded-full">
         <a href={downloadInfo.href} download={downloadInfo.fileName}>
-          Get Candoa
+          {downloadLabel}
           <ArrowDownToLine className="size-4" />
         </a>
       </Button>
@@ -248,7 +262,13 @@ function ValueItem({
   );
 }
 
-function DownloadSection({ downloadInfo }: { downloadInfo: DownloadInfo }) {
+function DownloadSection({
+  downloadInfo,
+  downloadLabel,
+}: {
+  downloadInfo: DownloadInfo;
+  downloadLabel: string;
+}) {
   return (
     <section
       id="download"
@@ -275,7 +295,7 @@ function DownloadSection({ downloadInfo }: { downloadInfo: DownloadInfo }) {
       >
         <a href={downloadInfo.href} download={downloadInfo.fileName}>
           <ArrowDownToLine className="size-4" />
-          Download for macOS
+          {downloadLabel}
         </a>
       </Button>
       <p className="mt-4 text-sm text-muted-foreground">
