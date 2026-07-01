@@ -124,7 +124,7 @@ export default function Home() {
 }
 
 function getDownloadLabel(downloadInfo: DownloadInfo) {
-  return `Download Candoa ${downloadInfo.version}`;
+  return `Download Candoa v${downloadInfo.version}`;
 }
 
 function Header({
