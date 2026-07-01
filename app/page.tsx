@@ -43,7 +43,7 @@ const features = [
 
 export default function Home() {
   const downloadInfo = getDownloadInfo();
-  const downloadLabel = getDownloadLabel(downloadInfo);
+  const downloadLabel = getDownloadLabel();
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -123,8 +123,8 @@ export default function Home() {
   );
 }
 
-function getDownloadLabel(downloadInfo: DownloadInfo) {
-  return `Download Candoa v${downloadInfo.version}`;
+function getDownloadLabel() {
+  return "Download Candoa";
 }
 
 function Header({
